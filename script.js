@@ -1,8 +1,18 @@
-function indexOfIgnoreCase(s1, s2) {
-  // write your code here
+function indexOfIgnoreCase(str: string, subStr: string): number {
+    const lowerStr = str.toLowerCase();
+    const lowerSubStr = subStr.toLowerCase();
+    const index = lowerStr.indexOf(lowerSubStr);
+    return index;
 }
 
-// Please do not change the code below
-const s1 = prompt("Enter s1:");
-const s2 = prompt("Enter s2:");
-alert(indexOfIgnoreCase(s1, s2));
+// Taking user input
+const str = prompt("Enter the main string:");
+const subStr = prompt("Enter the substring to search:");
+
+// Checking for valid input
+if (str !== null && subStr !== null) {
+    const result = indexOfIgnoreCase(str, subStr);
+    console.log(`Index of ${subStr} in ${str}: ${result}`);
+} else {
+    console.log("Invalid input. Please enter valid strings.");
+}
